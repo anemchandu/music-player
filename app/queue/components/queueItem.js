@@ -15,7 +15,7 @@ export default function QueueItem() {
       <p>Songs Currently In Queue</p>
       {data.map((ele, index) => {
         return (
-          <div className="flex text-white font-dm text-xl gap-5">
+          <div className="flex text-white font-dm text-xl gap-5" key={ele.id}>
             <p>{index + 1}</p>
             <p>{ele.name}</p>
             <MdDelete
