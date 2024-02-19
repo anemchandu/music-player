@@ -8,7 +8,7 @@ export default async function SearchPage({ params }) {
   const songs = searchResults.data.results;
 
   return songs?.length === 0 ? (
-    <div className="flex bg-black text-white font-dm justify-center items-center h-screen text-xl font-bold">
+    <div className="flex bg-black text-white font-dm justify-center items-center h-[92vh] text-xl font-bold">
       <p>OOPS!! No Songs Found</p>
     </div>
   ) : (

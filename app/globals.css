@@ -17,7 +17,22 @@
   }
 }
 
-body {
+.rhap_container {
+  background-color: rgba(0 0 0 / 89%) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.rhap_time {
+  color: white !important;
+  font-family: "DM Sans";
+}
+
+.rhap_main-controls-button {
+  color: white !important;
+}
+
+.rhap_repeat-button {
+  color: white !important;
 }
 
 @layer utilities {

@@ -14,7 +14,13 @@ export default function AudioPlayer() {
   return (
     <div className=" backdrop-blur-0 w-full ">
       {data && (
-        <H5AudioPlayer autoPlay src={`${data[index].downloadUrl[4].link}`} />
+        <div className="flex m-5 shadow-sm shadow-white rounded-2xl">
+          <img
+            src={`${data[index].image[2].link}`}
+            className="h-[90px] w-[100px] rounded-s-2xl"
+          />
+          <H5AudioPlayer autoPlay src={`${data[index].downloadUrl[4].link}`} />
+        </div>
       )}
     </div>
   );

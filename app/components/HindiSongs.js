@@ -12,7 +12,7 @@ export default async function HindiSongs() {
       <h4 className="font-sans font-bold mt-6 text-xl hover:brightness-90 hover:from-gray-800 hover:to-gray-950 hover:shadow-lg hover:shadow-green-900">
         Trending Hindi Songs
       </h4>
-      <div className="bg-black text-white h-auto justify-evenly w-full flex  flex-wrap gap-1 p-8">
+      <div className="bg-black text-white h-auto justify-evenly w-full flex  flex-wrap gap-1 p-8 pb-20">
         {songs?.map((song) => (
           <MusicCard key={song.id} {...song} />
         ))}
