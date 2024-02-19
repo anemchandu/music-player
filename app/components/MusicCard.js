@@ -2,6 +2,7 @@
 import {
   playSong,
   fetchSongInfo,
+  addToQueue,
   selectcurrentSongIndex,
   selectSongQueue,
 } from "@/lib/Redux/musicSlice";
@@ -26,7 +27,12 @@ export default function MusicCard({ name, primaryArtists, image, album, id }) {
           >
             <FaPlay color="black" size={20} />
           </div>
-          <div className="  rounded-full h-[50px]  bg-white w-[50px] flex justify-center items-center duration-300 transform">
+          <div
+            className="  rounded-full h-[50px]  bg-white w-[50px] flex justify-center items-center duration-300 transform"
+            onClick={() => {
+              dispatch(addToQueue(id));
+            }}
+          >
             <FaPlus color="black" size={18} />
           </div>
         </div>

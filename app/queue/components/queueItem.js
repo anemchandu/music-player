@@ -1,0 +1,33 @@
+import { removeSongFromQueue, selectSongQueue } from "@/lib/Redux/musicSlice";
+import React from "react";
+import { MdDelete } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+
+export default function QueueItem() {
+  const data = useSelector(selectSongQueue);
+  const dispatch = useDispatch();
+  return !data ? (
+    <div className="bg-black h-[94vh] overflow-hidden w-full flex justify-center items-center text-white">
+      <p className=" font-dm md:text-xl">Queue Is Empty</p>
+    </div>
+  ) : (
+    <div className="text-white p-5 flex flex-col items-center gap-4 w-full font-dm font-bold ">
+      <p>Songs Currently In Queue</p>
+      {data.map((ele, index) => {
+        return (
+          <div className="flex text-white font-dm text-xl gap-5">
+            <p>{index + 1}</p>
+            <p>{ele.name}</p>
+            <MdDelete
+              className="cursor-pointer"
+              size={30}
+              onClick={() => {
+                dispatch(removeSongFromQueue(ele.id));
+              }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}

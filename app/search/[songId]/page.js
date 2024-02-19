@@ -1,7 +1,11 @@
 import fetchSearchDetails from "@/lib/fetchSearchDetails";
 import React from "react";
 import SongComponent from "./Components/SongComponent";
-
+export const metadata = {
+  title: `Search Results`,
+  description: "Music App Developed By Mavin",
+  metadataBase: new URL("https://music-player-mavin.vercel.app/"),
+};
 export default async function SearchPage({ params }) {
   const searchResults = await fetchSearchDetails(params.songId);
 
