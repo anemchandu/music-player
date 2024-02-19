@@ -20,7 +20,7 @@ export default function AudioPlayer() {
         <div className="flex m-5 shadow-sm shadow-white rounded-2xl">
           <img
             src={`${data[index].image[2].link}`}
-            className="hidden md:block h-[90px] w-[100px] rounded-s-2xl"
+            className="hidden md:block h-auto w-[150px] rounded-s-2xl"
           />
           <div className="w-full text-white font-dm font-bold rhap_container">
             <marquee className="mt-2" behavior="alternate">

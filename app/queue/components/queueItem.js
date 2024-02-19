@@ -1,3 +1,4 @@
+"use client";
 import { removeSongFromQueue, selectSongQueue } from "@/lib/Redux/musicSlice";
 import React from "react";
 import { MdDelete } from "react-icons/md";

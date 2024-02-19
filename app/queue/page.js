@@ -1,9 +1,13 @@
-"use client";
 import Link from "next/link";
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import QueueItem from "./components/queueItem";
 import { HiMiniQueueList } from "react-icons/hi2";
+export const metadata = {
+  title: "Songs Queue",
+  description: "Music App Developed By Mavin",
+  metadataBase: new URL("https://music-player-mavin.vercel.app/"),
+};
 
 export default function page() {
   return (
