@@ -3,6 +3,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import "react-h5-audio-player/lib/styles.css";
 import "./globals.css";
 import StateProvider from "./stateProvider";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <StateProvider>
         <body className={inter.className}>
-          <>{children}</>
-          <div className="fixed  bottom-0 w-auto">
-            <AudioPlayer />
-          </div>
+          <>
+            {children}
+            <Toaster />
+            <div className="fixed  bottom-0 w-auto">
+              <AudioPlayer />
+            </div>
+          </>
         </body>
       </StateProvider>
     </html>

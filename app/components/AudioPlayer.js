@@ -28,7 +28,7 @@ export default function AudioPlayer() {
         <div
           className={
             isMinimized
-              ? "m-5 w-auto"
+              ? "m-5 w-auto rounded-full"
               : "flex m-5 shadow-sm shadow-white rounded-2xl w-auto"
           }
         >
@@ -36,8 +36,8 @@ export default function AudioPlayer() {
             src={`${data[index].image[2].link}`}
             className={
               !isMinimized
-                ? "hidden md:block h-auto w-[150px] rounded-s-2xl"
-                : "h-[150px] w-[150px] rounded-full animate-spin-slow duration-700"
+                ? "hidden md:block h-auto w-[150px] rounded-s-2xl cursor-pointer"
+                : "h-[100px] w-[100px] md:h-[150px] md:w-[150px] rounded-full animate-spin-slow duration-700 cursor-pointer"
             }
             onClick={() => {
               setMinimized(!isMinimized);
@@ -59,6 +59,7 @@ export default function AudioPlayer() {
                 onClick={() => {
                   setMinimized(!isMinimized);
                 }}
+                className="cursor-pointer"
               />
             </div>
 
@@ -71,6 +72,9 @@ export default function AudioPlayer() {
               }}
               onClickPrevious={() => {
                 dispatch(playPrevSong());
+              }}
+              onEnded={() => {
+                dispatch(playNextSong());
               }}
             />
           </div>

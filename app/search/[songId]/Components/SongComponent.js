@@ -1,6 +1,7 @@
 "use client";
 import { addToQueue, fetchSongInfo } from "@/lib/Redux/musicSlice";
 import React from "react";
+import { toast } from "react-hot-toast";
 
 import { FaPlus, FaPlay } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
@@ -17,7 +18,7 @@ export default function SongComponent({ name, album, image, id, index }) {
         <p className="hidden md:block ">{album.name}</p>
         <div className="hidden md:block"></div>
       </div>
-      <div className="flex items-center gap-10 md:mr-5 ">
+      <div className="flex items-center cursor-pointer gap-10 md:mr-5 ">
         <FaPlay
           size={20}
           className="hover:duration-300 hover:scale-125 rounded "
@@ -29,8 +30,9 @@ export default function SongComponent({ name, album, image, id, index }) {
           size={20}
           onClick={() => {
             dispatch(addToQueue(id));
+            toast("Added to Queue", { position: "top-center", duration: 2000 });
           }}
-          className="hover:duration-300 hover:scale-125 rounded "
+          className="hover:duration-300 cursor-pointer hover:scale-125 rounded "
         />
       </div>
     </div>

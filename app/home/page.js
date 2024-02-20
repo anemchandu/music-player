@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { HiMiniQueueList } from "react-icons/hi2";
 import TeluguSongs from "../components/TeluguSongs";
 import EnglishSongs from "../components/EnglishSongs";
-import HindiSongs from "../components/HindiSongs";
+
 import Link from "next/link";
 
 export const metadata = {
@@ -36,7 +36,6 @@ export default async function HomePage() {
       </div>
       <TeluguSongs />
       <EnglishSongs />
-      <HindiSongs />
     </>
   );
 }
