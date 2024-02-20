@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <StateProvider>
         <body className={inter.className}>
           <>{children}</>
-          <div className="fixed  bottom-0 w-full">
+          <div className="fixed  bottom-0 w-auto">
             <AudioPlayer />
           </div>
         </body>
