@@ -5,6 +5,7 @@ import "./globals.css";
 import StateProvider from "./stateProvider";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           <>
             {children}
             <Analytics />
+            <SpeedInsights />
             <Toaster />
             <div className="fixed  bottom-0 w-auto">
               <AudioPlayer />
