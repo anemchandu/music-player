@@ -24,6 +24,9 @@ export default function QueueItem() {
               className="cursor-pointer"
               size={30}
               onClick={() => {
+                toast("Removed From Queue", {
+                  icon: <MdDelete color="red" size={20} />,
+                });
                 dispatch(removeSongFromQueue(ele.id));
                 toast("Removed Successfully", {
                   icon: <MdDelete color="red" size={20} />,
