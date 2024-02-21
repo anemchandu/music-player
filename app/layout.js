@@ -4,6 +4,7 @@ import "react-h5-audio-player/lib/styles.css";
 import "./globals.css";
 import StateProvider from "./stateProvider";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <>
             {children}
+            <Analytics />
             <Toaster />
             <div className="fixed  bottom-0 w-auto">
               <AudioPlayer />
