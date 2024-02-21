@@ -1,6 +1,7 @@
 "use client";
 import { removeSongFromQueue, selectSongQueue } from "@/lib/Redux/musicSlice";
 import React from "react";
+import { toast } from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -23,6 +24,9 @@ export default function QueueItem() {
               className="cursor-pointer"
               size={30}
               onClick={() => {
+                toast("Removed From Queue", {
+                  icon: <MdDelete color="red" size={20} />,
+                });
                 dispatch(removeSongFromQueue(ele.id));
               }}
             />
