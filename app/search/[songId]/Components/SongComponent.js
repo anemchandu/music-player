@@ -30,7 +30,7 @@ export default function SongComponent({ name, album, image, id, index }) {
           size={20}
           onClick={() => {
             dispatch(addToQueue(id));
-            toast("Added to Queue", { position: "top-center", duration: 2000 });
+            toast.success("Added to Queue");
           }}
           className="hover:duration-300 cursor-pointer hover:scale-125 rounded "
         />

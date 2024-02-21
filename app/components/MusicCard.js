@@ -10,7 +10,7 @@ export default function MusicCard({ name, primaryArtists, image, album, id }) {
   const dispatch = useDispatch();
   function add(id) {
     dispatch(addToQueue(id));
-    toast("Added to Queue", { position: "top-center", duration: 2000 });
+    toast.success("Added to Queue");
   }
 
   return (
