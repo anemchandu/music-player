@@ -10,7 +10,13 @@ export default function SearchBox() {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    router.push(`/search/${searchValue}`);
+    const search = setTimeout(() => {
+      router.push(`/search/${searchValue}`);
+    }, 1000);
+
+    return () => {
+      clearTimeout(search);
+    };
   }, [searchValue]);
 
   return (
