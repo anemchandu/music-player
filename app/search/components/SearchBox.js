@@ -12,7 +12,7 @@ export default function SearchBox() {
   useEffect(() => {
     const search = setTimeout(() => {
       router.push(`/search/${searchValue}`);
-    }, 1000);
+    }, 500);
 
     return () => {
       clearTimeout(search);
@@ -21,16 +21,7 @@ export default function SearchBox() {
 
   return (
     <div className="flex-col md:gap-4 md:flex-row width-[380px] flex p-2 justify-between bg-black items-center md:gap-0 px-10 sticky top-0">
-      <div>
-        <Link
-          href={"/home"}
-          className="flex items-center gap-3 hover:scale-105 duration-300 hover:brightness-90 hover:from-gray-800 hover:to-gray-950 hover:shadow-lg hover:shadow-green-900"
-        >
-          <FaHome color="white" className="" size={20} />
-          <p className="text-white font-dm font-bold  text-xl ">Home</p>
-        </Link>
-      </div>
-      <div className="flex items-center flex-col md:flex-row ">
+      <div className="flex items-center flex-col md:flex-row justify-between w-full ">
         <Link href={"/queue"} className="text-white font-dm">
           <button className="flex items-center gap-4 p-4 hover:shadow-md hover:shadow-white duration-500 rounded-2xl mt-3">
             <p className="block font-bold  text-xl ">Queue</p>

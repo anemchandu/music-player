@@ -8,11 +8,12 @@ import { useDispatch } from "react-redux";
 
 export default function SongComponent({ name, album, image, id, index }) {
   const dispatch = useDispatch();
+
   return (
     <div className="flex items-center gap-6 p-3 shadow-md border-b border-white mx-4  font-dm rounded">
       <p className="mr-5 hidden md:block">{index + 1}</p>
       <div className="flex items-center justify-between flex-1">
-        <img src={image[1].link} className="h-[50px] w-[50px]" />
+        <img src={image[1].url} className="h-[50px] w-[50px]" />
         <p className="block text-ellipsis text-center text-white">{name}</p>
 
         <p className="hidden md:block ">{album.name}</p>

@@ -16,6 +16,8 @@ export default function AudioPlayer() {
   const dispatch = useDispatch();
   const [isMinimized, setMinimized] = useState(false);
 
+  console.log(data);
+
   return (
     <div
       className={
@@ -33,7 +35,7 @@ export default function AudioPlayer() {
           }
         >
           <img
-            src={`${data[index].image[2].link}`}
+            src={`${data[index]?.image[2]?.url}`}
             className={
               !isMinimized
                 ? "hidden md:block h-auto w-[150px] rounded-s-2xl cursor-pointer"
@@ -65,7 +67,7 @@ export default function AudioPlayer() {
 
             <H5AudioPlayer
               autoPlay
-              src={`${data[index].downloadUrl[4].link}`}
+              src={`${data[index].downloadUrl[4].url}`}
               showSkipControls={true}
               onClickNext={() => {
                 dispatch(playNextSong());

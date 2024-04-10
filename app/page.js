@@ -14,7 +14,7 @@ export default function Home() {
       <div className=" gap-4 mt-8 md:mt-0 flex md:h-screen md:w-1/2 flex-col justify-center items-center md:gap-[60px]">
         <h1 className="text-[43px] font-bold font-dm">No More Limits</h1>
         <h3 className="text-[25px] font-bold font-dm">Hassle Free Music</h3>
-        <Link href="/home">
+        <Link href="/search">
           <button className="p-[3.5%] bg-black text-white md:p-[1.5%] rounded-lg">
             Click to get Started
           </button>

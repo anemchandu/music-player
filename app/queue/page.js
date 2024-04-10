@@ -13,22 +13,17 @@ export default function page() {
   return (
     <div className="bg-gradient-to-b from-black to-slate-800 h-screen font-dm font-bold">
       <div className="flex items-center justify-between px-6 bg-black text-white gap-4 sticky z-10 top-0 ">
-        <Link href={"/home"}>
-          <button className="flex items-center gap-4 p-4 hover:shadow-md hover:shadow-white duration-500 rounded-2xl mt-3">
-            <p className="hidden md:block ">Home</p> <FaHome size={20} />
-          </button>
-        </Link>
-        <div className="flex items-center">
-          <Link href={"/search"}>
-            <button className="flex items-center gap-4 p-4 hover:shadow-md hover:shadow-white duration-500 rounded-2xl mt-3">
-              <p className="hidden md:block">Search More</p>{" "}
-              <FaSearch size={20} />
-            </button>
-          </Link>
+        <div className="flex items-center justify-between w-full">
           <Link href={"/queue"}>
             <button className="flex items-center gap-4 p-4 hover:shadow-md hover:shadow-white duration-500 rounded-2xl mt-3">
               <p className="hidden md:block">Queue</p>
               <HiMiniQueueList size={20} />
+            </button>
+          </Link>
+          <Link href={"/search"}>
+            <button className="flex items-center gap-4 p-4 hover:shadow-md hover:shadow-white duration-500 rounded-2xl mt-3">
+              <p className="hidden md:block">Search More</p>{" "}
+              <FaSearch size={20} />
             </button>
           </Link>
         </div>
