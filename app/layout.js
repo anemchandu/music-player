@@ -6,6 +6,7 @@ import StateProvider from "./stateProvider";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Adsense from "./components/Adsense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <Adsense />
       </head>
       <StateProvider>
         <body className={inter.className}>

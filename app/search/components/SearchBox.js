@@ -12,7 +12,7 @@ export default function SearchBox() {
   useEffect(() => {
     const search = setTimeout(() => {
       router.push(`/search/${searchValue}`);
-    }, 500);
+    }, 100);
 
     return () => {
       clearTimeout(search);
