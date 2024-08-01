@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="flex-col md:flex-row flex h-screen w-full bg-[#A0FDAE] justify-center items-center ">
+    <main className="flex-col md:flex-row flex h-auto w-auto bg-[#A0FDAE] justify-center items-center ">
       <div className="md:p-6 w-1/2">
         <img src="/landing.png" className="md:h-screen w-full" />
       </div>
