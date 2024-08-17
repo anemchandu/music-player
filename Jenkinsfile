@@ -40,9 +40,9 @@ pipeline {
             steps{
                 echo "Pushing Docker image to Dockerhub"
                 withCredentials([usernamePassword(credentialsId: "Docker-Cred", usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
-                sh 'docker tag music-playlist ${DOCKERHUB_USERNAME}/music-playlist:${BUILD_NUMBER}'
+                sh 'docker tag music-playlist ${DOCKERHUB_USERNAME}/music-playlist:latest'
                 sh 'docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}'
-                sh 'docker push ${DOCKERHUB_USERNAME}/music-playlist:${BUILD_NUMBER}'
+                sh 'docker push ${DOCKERHUB_USERNAME}/music-playlist:latest'
                 }
             }
         }
@@ -52,6 +52,7 @@ pipeline {
             GIT_REPO_NAME = "music-player"
             GIT_USER_NAME = "Mani10101"
             DOCKER_IMAGE = "manikanta101/music-playlist"
+          
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
@@ -59,7 +60,7 @@ pipeline {
                     git config user.email "manikantanallamilli1234@gmail.com"
                     git config user.name "Mani10101"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/manikanta101/music-playlist/${DOCKER_IMAGE}/g" kuberentes/deployment.yml
+                    sed -i "s/latest/${DOCKER_IMAGE}/g" kuberentes/deployment.yml
                     git add kuberentes/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
