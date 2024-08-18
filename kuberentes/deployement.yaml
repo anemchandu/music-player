@@ -8,14 +8,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nmusic-player
+      app: music-player
   template:
     metadata:
       labels:
-        app: nmusic-player
+        app: music-player
     spec:
       containers:
       - name: music-player
-        image: manikanta101/music-playlist:7
+        image: manikanta101/music-playlist:latest
         ports:
         - containerPort: 3000
