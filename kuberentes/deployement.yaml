@@ -15,7 +15,7 @@ spec:
         app: Music-Player
     spec:
       containers:
-      - name: Music-player-deployment
+      - name: Music-player
         image: nmanikanta101/music-playlist:3
         ports:
         - containerPort: 3000
