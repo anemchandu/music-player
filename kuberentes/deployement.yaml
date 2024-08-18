@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Music-player-deployment
+  name: music-player-deployement
   labels:
-    app: Music-Player
+    app: music-player
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: Music-Player
+      app: nmusic-player
   template:
     metadata:
       labels:
-        app: Music-Player
+        app: nmusic-player
     spec:
       containers:
-      - name: Music-player
-        image: nmanikanta101/music-playlist:3
+      - name: music-player
+        image: manikanta101/music-playlist:latest
         ports:
         - containerPort: 3000
