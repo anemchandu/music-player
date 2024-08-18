@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: Music-Player
+  name: music-player-service
 spec:
   type: NodePort
-  ports:
-  - name: http
-    port: 80
-    targetPort: 3000
-    protocol: TCP
   selector:
-    app: Music-Player
+    app: music-player
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      nodePort: 31000
