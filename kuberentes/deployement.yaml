@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: music-player
-        image: manikanta101/music-playlist:latest
+        image: manikanta101/music-playlist:9
         ports:
         - containerPort: 3000
