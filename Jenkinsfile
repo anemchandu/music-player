@@ -60,8 +60,8 @@ pipeline {
                     git config user.email "manikantanallamilli1234@gmail.com"
                     git config user.name "Mani10101"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/latest/${BUILD_NUMBER}/g" kuberentes/deployment.yml
-                    git add kuberentes/deployment.yml
+                    sed -i "s/latest/${BUILD_NUMBER}/g" kuberentes/deployement.yaml
+                    git add kuberentes/deployement.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
                 '''
