@@ -51,7 +51,7 @@ pipeline {
         environment {
             GIT_REPO_NAME = "music-player"
             GIT_USER_NAME = "Mani10101"
-            DOCKER_IMAGE = "manikanta101/music-playlist"
+
           
         }
         steps {
@@ -60,7 +60,7 @@ pipeline {
                     git config user.email "manikantanallamilli1234@gmail.com"
                     git config user.name "Mani10101"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/latest/${DOCKER_IMAGE}/g" kuberentes/deployment.yml
+                    sed -i "s/latest/${BUILD_NUMBER}/g" kuberentes/deployment.yml
                     git add kuberentes/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
