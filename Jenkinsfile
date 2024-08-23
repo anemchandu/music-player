@@ -40,7 +40,7 @@ pipeline {
             steps{
                 echo "Pushing Docker image to Dockerhub"
                 withCredentials([usernamePassword(credentialsId: "Docker-Cred", usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
-                sh 'docker tag music-playlist ${DOCKERHUB_USERNAME}/music-playlist:latest'
+                sh 'docker tag music-playlist ${DOCKERHUB_USERNAME}/music-playlist:${BUILD_NUMBER}'
                 sh 'docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}'
                 sh 'docker push ${DOCKERHUB_USERNAME}/music-playlist:${BUILD_NUMBER}'
                 }
