@@ -63,7 +63,7 @@ pipeline {
                     sed -i "s/latest/${BUILD_NUMBER}/g" kuberentes/deployement.yaml
                     git add kuberentes/deployement.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
+                    git push https://${github-token}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
                 '''
             }
         }
