@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment{
-        SONAR_HOME = tool "Sonar Scanner"
+        SONAR_HOME = tool "Sonar"
     }
 
     stages {
@@ -15,8 +15,8 @@ pipeline {
         
         stage("Sonar Analysis"){
             steps{
-                echo "Sonar Analysis"
-                withSonarQubeEnv("Sonar Server"){
+                echo "Sonar scanner"
+                withSonarQubeEnv("Sonar scanner"){
                     sh "$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=music-player -Dsonar.projectKey=music-player"
                 }
             }
