@@ -58,7 +58,7 @@ pipeline {
             withCredentials([string(credentialsId: 'Github', variable: 'github-token')]) {
                 sh '''
                     git config user.email "21p35a0370@acet.ac.in"
-                    git config user.name "anemchandu"
+                    git config user.name "Anem Chandu"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/latest/${BUILD_NUMBER}/g" kuberentes/deployement.yaml
                     git add kuberentes/deployement.yaml
